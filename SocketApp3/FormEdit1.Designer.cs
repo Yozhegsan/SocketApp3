@@ -30,8 +30,9 @@
         {
             this.txt0 = new System.Windows.Forms.TextBox();
             this.lblText = new System.Windows.Forms.Label();
-            this.btnOk = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt0
@@ -51,31 +52,42 @@
             this.lblText.TabIndex = 1;
             this.lblText.Text = "Вкажіть параметри датчика";
             // 
-            // btnOk
+            // button1
             // 
-            this.btnOk.Image = global::SocketApp3.res.Ok1;
-            this.btnOk.Location = new System.Drawing.Point(203, 4);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(40, 40);
-            this.btnOk.TabIndex = 2;
-            this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            this.button1.Image = global::SocketApp3.res.HEX_2;
+            this.button1.Location = new System.Drawing.Point(203, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 40);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Image = global::SocketApp3.res.Cancel1;
-            this.btnCancel.Location = new System.Drawing.Point(249, 4);
+            this.btnCancel.Location = new System.Drawing.Point(295, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(40, 40);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnOk
+            // 
+            this.btnOk.Image = global::SocketApp3.res.Ok1;
+            this.btnOk.Location = new System.Drawing.Point(249, 4);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(40, 40);
+            this.btnOk.TabIndex = 2;
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
             // FormEdit1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 53);
+            this.ClientSize = new System.Drawing.Size(350, 53);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lblText);
@@ -98,5 +110,6 @@
         private System.Windows.Forms.Label lblText;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button button1;
     }
 }

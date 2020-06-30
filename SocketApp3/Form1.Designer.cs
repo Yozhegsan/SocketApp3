@@ -71,10 +71,12 @@
             // 
             // lstThermoSensors
             // 
+            this.lstThermoSensors.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lstThermoSensors.FormattingEnabled = true;
+            this.lstThermoSensors.ItemHeight = 14;
             this.lstThermoSensors.Location = new System.Drawing.Point(168, 80);
             this.lstThermoSensors.Name = "lstThermoSensors";
-            this.lstThermoSensors.Size = new System.Drawing.Size(239, 316);
+            this.lstThermoSensors.Size = new System.Drawing.Size(239, 312);
             this.lstThermoSensors.TabIndex = 11;
             this.lstThermoSensors.DoubleClick += new System.EventHandler(this.lstThermoSensors_DoubleClick);
             // 
@@ -153,9 +155,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(11, 220);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.Size = new System.Drawing.Size(101, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "MAC address";
+            this.label4.Text = "MAC address (HEX)";
             // 
             // label5
             // 
@@ -201,9 +203,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 337);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 13);
+            this.label7.Size = new System.Drawing.Size(124, 13);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Датчик вібрації 1";
+            this.label7.Text = "Датчик вібрації 1 (HEX)";
             // 
             // label8
             // 
@@ -219,9 +221,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(12, 379);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 13);
+            this.label9.Size = new System.Drawing.Size(124, 13);
             this.label9.TabIndex = 2;
-            this.label9.Text = "Датчик вібрації 2";
+            this.label9.Text = "Датчик вібрації 2 (HEX)";
             // 
             // txtVibroSensorInfo1
             // 
@@ -249,9 +251,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(168, 64);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(118, 13);
+            this.label10.Size = new System.Drawing.Size(149, 13);
             this.label10.TabIndex = 2;
-            this.label10.Text = "Датчики температури";
+            this.label10.Text = "Датчики температури (HEX)";
             // 
             // label11
             // 

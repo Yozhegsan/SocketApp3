@@ -63,6 +63,16 @@ namespace SocketApp3 {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackSpace_1 {
+            get {
+                object obj = ResourceManager.GetObject("BackSpace_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancel1 {
             get {
                 object obj = ResourceManager.GetObject("Cancel1", resourceCulture);
@@ -96,6 +106,26 @@ namespace SocketApp3 {
         internal static System.Drawing.Bitmap Chip1_w {
             get {
                 object obj = ResourceManager.GetObject("Chip1_w", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HEX_1 {
+            get {
+                object obj = ResourceManager.GetObject("HEX_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HEX_2 {
+            get {
+                object obj = ResourceManager.GetObject("HEX_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

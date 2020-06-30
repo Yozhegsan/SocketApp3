@@ -21,6 +21,8 @@ namespace SocketApp3
         private void Form1_Load(object sender, EventArgs e)
         {
 
+
+
         }
 
         private void GetAllData(string ip, int port)
@@ -42,7 +44,7 @@ namespace SocketApp3
             bb[0] = arr[20];
             bb[1] = arr[21];
             txtPort.Text = BitConverter.ToInt16(bb, 0).ToString(); ;
-            txtMacAddress.Text = MakeDataString(ref arr, 22, 6);
+            txtMacAddress.Text = MakeHexDataString(ref arr, 22, 6);
             txtThermosensorsCount.Text = arr[28].ToString();
             txtVibrosensorsCount.Text = arr[29].ToString();
             // - - -
@@ -52,12 +54,12 @@ namespace SocketApp3
             for (int i = 0; i < 20; i++)
             {
                 n = k + (i * 8);
-                lstThermoSensors.Items.Add((i + 1).ToString("00") + " - " + MakeDataString(ref arr, n, 8));
+                lstThermoSensors.Items.Add((i + 1).ToString("00") + " - " + MakeHexDataString(ref arr, n, 8));
             }
             if (lstThermoSensors.Items.Count > 0) lstThermoSensors.SelectedIndex = 0;
             // = = =
-            txtVibroSensorInfo1.Text = arr[190].ToString();
-            txtVibroSensorInfo2.Text = arr[191].ToString();
+            txtVibroSensorInfo1.Text = MakeHexDataString(ref arr, 190, 1);
+            txtVibroSensorInfo2.Text = MakeHexDataString(ref arr, 191, 1);
         }
 
         private string MakeDataString(ref byte[] arr, int StartId, int Count)
@@ -68,7 +70,30 @@ namespace SocketApp3
                 if (i == Count - 1)
                     st += arr[i + StartId].ToString();
                 else
-                    st += arr[i + StartId].ToString() + ",";
+                    st += arr[i + StartId].ToString() + ".";
+            }
+            return st;
+        }
+
+        private string MakeHexDataString(ref byte[] arr, int StartId, int Count)
+        {
+            string st = "";
+            for (int i = 0; i < Count; i++)
+            {
+                if (arr[i + StartId] < 16)
+                {
+                    if (i == Count - 1)
+                        st += "0" + Convert.ToString(arr[i + StartId], 16).ToUpper();
+                    else
+                        st += "0" + Convert.ToString(arr[i + StartId], 16).ToUpper() + ".";
+                }
+                else
+                {
+                    if (i == Count - 1)
+                        st += Convert.ToString(arr[i + StartId], 16).ToUpper();
+                    else
+                        st += Convert.ToString(arr[i + StartId], 16).ToUpper() + ".";
+                }
             }
             return st;
         }
@@ -85,12 +110,12 @@ namespace SocketApp3
 
         private void EditItem(int id, string txt)
         {
-            FormEdit1 frm = new FormEdit1();
+            FormHexKeyBoard frm = new FormHexKeyBoard();
             frm.SetData(txt);
             DialogResult dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                lstThermoSensors.Items[id] = (id + 1).ToString("00") + " - " + frm.NewData;
+                lstThermoSensors.Items[id] = (id + 1).ToString("00") + " - " + frm.NewText;
             }
         }
 
@@ -109,17 +134,21 @@ namespace SocketApp3
             byte[] bb = BitConverter.GetBytes(Int16.Parse(txtPort.Text));
             SendMas[20] = bb[0];
             SendMas[21] = bb[1];
-            StringToByteMas(txtMacAddress.Text, ref SendMas, 22);
-            SendMas[28] = byte.Parse(txtThermosensorsCount.Text);
+            StringHexToByteMas(txtMacAddress.Text, ref SendMas, 22);
+            SendMas[28] = (byte)Convert.ToInt32(txtThermosensorsCount.Text, 16);
             SendMas[29] = byte.Parse(txtVibrosensorsCount.Text);
             int k = 30;
             int n = 8;
             for (int i = 0; i < 20; i++)
             {
-                StringToByteMas(lstThermoSensors.Items[i].ToString().Substring(5), ref SendMas, k + (n * i));
+                StringHexToByteMas(lstThermoSensors.Items[i].ToString().Substring(5), ref SendMas, k + (n * i));
             }
-            SendMas[190] = byte.Parse(txtVibroSensorInfo1.Text);
-            SendMas[191] = byte.Parse(txtVibroSensorInfo2.Text);
+
+
+            SendMas[190] = Convert.ToByte(txtVibroSensorInfo1.Text, 16);
+            SendMas[191] = Convert.ToByte(txtVibroSensorInfo2.Text, 16);
+
+
             //File.WriteAllBytes( Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\TestDump.dat" , SendMas);
             sockets.SetEEPROM(ref SendMas, txtReadIP.Text, int.Parse(txtReadPort.Text));
             btnWriteData.Enabled = true;
@@ -132,6 +161,16 @@ namespace SocketApp3
             for (int i = 0; i < mas.Count(); i++)
             {
                 arr[i + offset] = byte.Parse(mas[i]);
+            }
+        }
+
+        private void StringHexToByteMas(string txt, ref byte[] arr, int offset)
+        {
+            txt = txt.Replace(',', '.');
+            string[] mas = txt.Split('.');
+            for (int i = 0; i < mas.Count(); i++)
+            {
+                arr[i + offset] = Convert.ToByte(mas[i], 16);
             }
         }
     }
