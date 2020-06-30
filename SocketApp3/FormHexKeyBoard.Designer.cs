@@ -80,6 +80,7 @@
             this.btnCancel.Size = new System.Drawing.Size(40, 40);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FormHexKeyBoard
             // 
@@ -91,7 +92,11 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblKeyboard);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormHexKeyBoard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "HEX клавіатура";
             this.Load += new System.EventHandler(this.FormHexKeyBoard_Load);
             this.ResumeLayout(false);

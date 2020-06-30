@@ -113,9 +113,9 @@
             this.chkDefaultFlag.AutoSize = true;
             this.chkDefaultFlag.Location = new System.Drawing.Point(171, 399);
             this.chkDefaultFlag.Name = "chkDefaultFlag";
-            this.chkDefaultFlag.Size = new System.Drawing.Size(225, 17);
+            this.chkDefaultFlag.Size = new System.Drawing.Size(136, 17);
             this.chkDefaultFlag.TabIndex = 5;
-            this.chkDefaultFlag.Text = "Перемикач режиму роботи контролера";
+            this.chkDefaultFlag.Text = "Режим налаштування";
             this.chkDefaultFlag.UseVisualStyleBackColor = true;
             // 
             // label2

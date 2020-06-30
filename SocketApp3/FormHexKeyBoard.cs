@@ -13,7 +13,6 @@ namespace SocketApp3
     public partial class FormHexKeyBoard : Form
     {
         List<Button> btns = new List<Button>();
-
         public string NewText = "";
 
         //##############################################################################################################
@@ -26,6 +25,7 @@ namespace SocketApp3
         private void FormHexKeyBoard_Load(object sender, EventArgs e)
         {
             MakeKeyboard();
+            txtHEX.Select();
         }
 
         public void SetData(string StringHexData)
@@ -36,19 +36,15 @@ namespace SocketApp3
         private void MakeKeyboard()
         {
             int siz = 30;
-
             int x = 0;
             int y = 0;
-
             btns.Clear();
             for (int i = 0; i < 256; i++)
             {
                 btns.Add(new Button());
                 this.Controls.Add(btns[btns.Count - 1]);
                 btns[btns.Count - 1].Click += KeyBoard_Click;
-
-                if (i < 16) btns[btns.Count - 1].Text = "0" + Convert.ToString(i, 16).ToUpper(); else btns[btns.Count - 1].Text = Convert.ToString(i, 16).ToUpper();
-
+                btns[btns.Count - 1].Text = i < 16 ? "0" + Convert.ToString(i, 16).ToUpper() : Convert.ToString(i, 16).ToUpper();
                 btns[btns.Count - 1].Width = siz;
                 btns[btns.Count - 1].Height = siz;
                 btns[btns.Count - 1].Left = x * siz + 10;
@@ -60,21 +56,12 @@ namespace SocketApp3
                     x = 0;
                     y++;
                 }
-
             }
         }
 
         private void KeyBoard_Click(object sender, EventArgs e)
         {
-
-            if (txtHEX.Text.Length == 0)
-            {
-                txtHEX.AppendText(((Button)sender).Text);
-            }
-            else
-            {
-                txtHEX.AppendText("." + ((Button)sender).Text);
-            }
+            txtHEX.AppendText((txtHEX.Text.Length == 0 ? "" : ".") + ((Button)sender).Text);
         }
 
         private void btnBS_Click(object sender, EventArgs e)
@@ -89,19 +76,13 @@ namespace SocketApp3
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            //List<string> strmas = new List<string>();
-            //strmas = txtHEX.Text.Split('.').ToList();
-
-            //string ss = "";
-            //foreach (string s in strmas)
-            //    ss += Convert.ToInt32(s, 16).ToString() + ".";
-            //ss = ss.Substring(0, ss.Length - 1);
-
-            //NewText = ss;
-
-
             NewText = txtHEX.Text;
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }
