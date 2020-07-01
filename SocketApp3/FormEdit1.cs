@@ -45,14 +45,6 @@ namespace SocketApp3
         private void button1_Click(object sender, EventArgs e)
         {
 
-            FormHexKeyBoard frm = new FormHexKeyBoard();
-            frm.SetData(txt0.Text);
-            DialogResult dr = frm.ShowDialog();
-            if (dr == DialogResult.OK)
-            {
-                txt0.Text = frm.NewText;
-            }
-
         }
     }
 }

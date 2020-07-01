@@ -20,9 +20,17 @@ namespace SocketApp3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            lblD.Left = 10;
+            lblD.Width = ClientRectangle.Width - 20;
+            lblD.Height = 2;
+            lblD.Top = 55;
+            lblD.BackColor = Color.FromName("Window");
 
-
-
+            lblL.Top = 56;
+            lblL.Height = 1;
+            lblL.Width = lblD.Width-1;
+            lblL.Left = 11;
+            lblL.BackColor = Color.FromName("AppWorkspace");
         }
 
         private void GetAllData(string ip, int port)
@@ -100,7 +108,9 @@ namespace SocketApp3
 
         private void btnGetAllData_Click(object sender, EventArgs e)
         {
+            btnWriteData.Enabled = false;
             GetAllData(txtReadIP.Text, int.Parse(txtReadPort.Text));
+            btnWriteData.Enabled = true;
         }
 
         private void lstThermoSensors_DoubleClick(object sender, EventArgs e)
@@ -110,12 +120,12 @@ namespace SocketApp3
 
         private void EditItem(int id, string txt)
         {
-            FormHexKeyBoard frm = new FormHexKeyBoard();
+            FormEdit1 frm = new FormEdit1();
             frm.SetData(txt);
             DialogResult dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                lstThermoSensors.Items[id] = (id + 1).ToString("00") + " - " + frm.NewText;
+                lstThermoSensors.Items[id] = (id + 1).ToString("00") + " - " + frm.NewData;
             }
         }
 
@@ -144,13 +154,16 @@ namespace SocketApp3
                 StringHexToByteMas(lstThermoSensors.Items[i].ToString().Substring(5), ref SendMas, k + (n * i));
             }
 
-
             SendMas[190] = Convert.ToByte(txtVibroSensorInfo1.Text, 16);
             SendMas[191] = Convert.ToByte(txtVibroSensorInfo2.Text, 16);
 
-
             //File.WriteAllBytes( Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\TestDump.dat" , SendMas);
-            sockets.SetEEPROM(ref SendMas, txtReadIP.Text, int.Parse(txtReadPort.Text));
+
+
+            if (MessageBox.Show("Записати дамп в EEPROM контролера?", "Важливе питання", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                sockets.SetEEPROM(ref SendMas, txtReadIP.Text, int.Parse(txtReadPort.Text));
+            }
             btnWriteData.Enabled = true;
         }
 

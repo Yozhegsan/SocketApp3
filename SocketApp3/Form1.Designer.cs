@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnGetAllData = new System.Windows.Forms.Button();
             this.lstThermoSensors = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnWriteData = new System.Windows.Forms.Button();
             this.txtSubnetMask = new System.Windows.Forms.TextBox();
             this.chkDefaultFlag = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +44,6 @@
             this.txtThermosensorsCount = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtVibroSensorInfo1 = new System.Windows.Forms.TextBox();
             this.txtVibrosensorsCount = new System.Windows.Forms.TextBox();
             this.txtVibroSensorInfo2 = new System.Windows.Forms.TextBox();
@@ -55,19 +52,13 @@
             this.txtReadIP = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtReadPort = new System.Windows.Forms.TextBox();
+            this.lblD = new System.Windows.Forms.Label();
+            this.lblL = new System.Windows.Forms.Label();
+            this.btnWriteData = new System.Windows.Forms.Button();
+            this.btnGetAllData = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btnGetAllData
-            // 
-            this.btnGetAllData.Image = global::SocketApp3.res.Chip1_r;
-            this.btnGetAllData.Location = new System.Drawing.Point(170, 9);
-            this.btnGetAllData.Name = "btnGetAllData";
-            this.btnGetAllData.Size = new System.Drawing.Size(111, 40);
-            this.btnGetAllData.TabIndex = 0;
-            this.btnGetAllData.Text = "Прочитати";
-            this.btnGetAllData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGetAllData.UseVisualStyleBackColor = true;
-            this.btnGetAllData.Click += new System.EventHandler(this.btnGetAllData_Click);
             // 
             // lstThermoSensors
             // 
@@ -76,7 +67,7 @@
             this.lstThermoSensors.ItemHeight = 14;
             this.lstThermoSensors.Location = new System.Drawing.Point(168, 80);
             this.lstThermoSensors.Name = "lstThermoSensors";
-            this.lstThermoSensors.Size = new System.Drawing.Size(239, 312);
+            this.lstThermoSensors.Size = new System.Drawing.Size(239, 298);
             this.lstThermoSensors.TabIndex = 11;
             this.lstThermoSensors.DoubleClick += new System.EventHandler(this.lstThermoSensors_DoubleClick);
             // 
@@ -89,18 +80,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Subnet mask";
             // 
-            // btnWriteData
-            // 
-            this.btnWriteData.Image = global::SocketApp3.res.Chip1_w;
-            this.btnWriteData.Location = new System.Drawing.Point(296, 9);
-            this.btnWriteData.Name = "btnWriteData";
-            this.btnWriteData.Size = new System.Drawing.Size(111, 40);
-            this.btnWriteData.TabIndex = 3;
-            this.btnWriteData.Text = "Записати";
-            this.btnWriteData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnWriteData.UseVisualStyleBackColor = true;
-            this.btnWriteData.Click += new System.EventHandler(this.btnWriteData_Click);
-            // 
             // txtSubnetMask
             // 
             this.txtSubnetMask.Location = new System.Drawing.Point(14, 119);
@@ -111,7 +90,7 @@
             // chkDefaultFlag
             // 
             this.chkDefaultFlag.AutoSize = true;
-            this.chkDefaultFlag.Location = new System.Drawing.Point(171, 399);
+            this.chkDefaultFlag.Location = new System.Drawing.Point(12, 360);
             this.chkDefaultFlag.Name = "chkDefaultFlag";
             this.chkDefaultFlag.Size = new System.Drawing.Size(136, 17);
             this.chkDefaultFlag.TabIndex = 5;
@@ -147,13 +126,13 @@
             // 
             this.txtGateway.Location = new System.Drawing.Point(14, 158);
             this.txtGateway.Name = "txtGateway";
-            this.txtGateway.Size = new System.Drawing.Size(144, 20);
+            this.txtGateway.Size = new System.Drawing.Size(93, 20);
             this.txtGateway.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 220);
+            this.label4.Location = new System.Drawing.Point(11, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 13);
             this.label4.TabIndex = 2;
@@ -162,7 +141,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 181);
+            this.label5.Location = new System.Drawing.Point(109, 142);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 2;
@@ -171,79 +150,76 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 259);
+            this.label6.Location = new System.Drawing.Point(212, 215);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 13);
             this.label6.TabIndex = 2;
             this.label6.Text = "Кількість термодатчиків";
+            this.label6.Visible = false;
             // 
             // txtMacAddress
             // 
-            this.txtMacAddress.Location = new System.Drawing.Point(14, 236);
+            this.txtMacAddress.Location = new System.Drawing.Point(14, 197);
             this.txtMacAddress.Name = "txtMacAddress";
             this.txtMacAddress.Size = new System.Drawing.Size(144, 20);
             this.txtMacAddress.TabIndex = 6;
             // 
             // txtPort
             // 
-            this.txtPort.Location = new System.Drawing.Point(14, 197);
+            this.txtPort.Location = new System.Drawing.Point(112, 158);
             this.txtPort.Name = "txtPort";
-            this.txtPort.Size = new System.Drawing.Size(144, 20);
+            this.txtPort.Size = new System.Drawing.Size(46, 20);
             this.txtPort.TabIndex = 5;
             // 
             // txtThermosensorsCount
             // 
-            this.txtThermosensorsCount.Location = new System.Drawing.Point(14, 275);
+            this.txtThermosensorsCount.Enabled = false;
+            this.txtThermosensorsCount.Location = new System.Drawing.Point(215, 231);
             this.txtThermosensorsCount.Name = "txtThermosensorsCount";
             this.txtThermosensorsCount.Size = new System.Drawing.Size(141, 20);
             this.txtThermosensorsCount.TabIndex = 7;
+            this.txtThermosensorsCount.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 337);
+            this.label7.Location = new System.Drawing.Point(12, 220);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 13);
+            this.label7.Size = new System.Drawing.Size(121, 13);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Датчик вібрації 1 (HEX)";
+            this.label7.Text = "Датчики вібрації (HEX)";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 298);
+            this.label8.Location = new System.Drawing.Point(212, 254);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(124, 13);
             this.label8.TabIndex = 2;
             this.label8.Text = "Кількість вібродатчиків";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 379);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(124, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Датчик вібрації 2 (HEX)";
+            this.label8.Visible = false;
             // 
             // txtVibroSensorInfo1
             // 
-            this.txtVibroSensorInfo1.Location = new System.Drawing.Point(15, 353);
+            this.txtVibroSensorInfo1.Location = new System.Drawing.Point(35, 236);
             this.txtVibroSensorInfo1.Name = "txtVibroSensorInfo1";
-            this.txtVibroSensorInfo1.Size = new System.Drawing.Size(138, 20);
+            this.txtVibroSensorInfo1.Size = new System.Drawing.Size(42, 20);
             this.txtVibroSensorInfo1.TabIndex = 9;
             // 
             // txtVibrosensorsCount
             // 
-            this.txtVibrosensorsCount.Location = new System.Drawing.Point(14, 314);
+            this.txtVibrosensorsCount.Enabled = false;
+            this.txtVibrosensorsCount.Location = new System.Drawing.Point(215, 270);
             this.txtVibrosensorsCount.Name = "txtVibrosensorsCount";
             this.txtVibrosensorsCount.Size = new System.Drawing.Size(141, 20);
             this.txtVibrosensorsCount.TabIndex = 8;
+            this.txtVibrosensorsCount.Visible = false;
             // 
             // txtVibroSensorInfo2
             // 
-            this.txtVibroSensorInfo2.Location = new System.Drawing.Point(15, 395);
+            this.txtVibroSensorInfo2.Location = new System.Drawing.Point(113, 236);
             this.txtVibroSensorInfo2.Name = "txtVibroSensorInfo2";
-            this.txtVibroSensorInfo2.Size = new System.Drawing.Size(138, 20);
+            this.txtVibroSensorInfo2.Size = new System.Drawing.Size(42, 20);
             this.txtVibroSensorInfo2.TabIndex = 10;
             // 
             // label10
@@ -289,16 +265,79 @@
             this.txtReadPort.TabIndex = 1;
             this.txtReadPort.Text = "2000";
             // 
+            // lblD
+            // 
+            this.lblD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblD.Location = new System.Drawing.Point(12, 48);
+            this.lblD.Name = "lblD";
+            this.lblD.Size = new System.Drawing.Size(41, 15);
+            this.lblD.TabIndex = 12;
+            this.lblD.Text = "label13";
+            // 
+            // lblL
+            // 
+            this.lblL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblL.Location = new System.Drawing.Point(59, 48);
+            this.lblL.Name = "lblL";
+            this.lblL.Size = new System.Drawing.Size(72, 10);
+            this.lblL.TabIndex = 12;
+            this.lblL.Text = "label13";
+            // 
+            // btnWriteData
+            // 
+            this.btnWriteData.Enabled = false;
+            this.btnWriteData.Image = global::SocketApp3.res.WriteEEPROM;
+            this.btnWriteData.Location = new System.Drawing.Point(296, 9);
+            this.btnWriteData.Name = "btnWriteData";
+            this.btnWriteData.Size = new System.Drawing.Size(111, 40);
+            this.btnWriteData.TabIndex = 3;
+            this.btnWriteData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnWriteData.UseVisualStyleBackColor = true;
+            this.btnWriteData.Click += new System.EventHandler(this.btnWriteData_Click);
+            // 
+            // btnGetAllData
+            // 
+            this.btnGetAllData.Image = global::SocketApp3.res.ReadEEPROM;
+            this.btnGetAllData.Location = new System.Drawing.Point(170, 9);
+            this.btnGetAllData.Name = "btnGetAllData";
+            this.btnGetAllData.Size = new System.Drawing.Size(111, 40);
+            this.btnGetAllData.TabIndex = 0;
+            this.btnGetAllData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGetAllData.UseVisualStyleBackColor = true;
+            this.btnGetAllData.Click += new System.EventHandler(this.btnGetAllData_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 239);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(24, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "№1";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(88, 239);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(24, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "№2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 427);
+            this.ClientSize = new System.Drawing.Size(421, 389);
+            this.Controls.Add(this.txtThermosensorsCount);
+            this.Controls.Add(this.txtVibrosensorsCount);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblL);
+            this.Controls.Add(this.lblD);
             this.Controls.Add(this.chkDefaultFlag);
             this.Controls.Add(this.txtVibroSensorInfo2);
-            this.Controls.Add(this.txtThermosensorsCount);
             this.Controls.Add(this.txtGateway);
-            this.Controls.Add(this.txtVibrosensorsCount);
             this.Controls.Add(this.txtReadPort);
             this.Controls.Add(this.txtPort);
             this.Controls.Add(this.txtReadIP);
@@ -307,10 +346,9 @@
             this.Controls.Add(this.txtMacAddress);
             this.Controls.Add(this.txtSubnetMask);
             this.Controls.Add(this.btnWriteData);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label5);
@@ -353,7 +391,6 @@
         private System.Windows.Forms.TextBox txtThermosensorsCount;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtVibroSensorInfo1;
         private System.Windows.Forms.TextBox txtVibrosensorsCount;
         private System.Windows.Forms.TextBox txtVibroSensorInfo2;
@@ -362,6 +399,10 @@
         private System.Windows.Forms.TextBox txtReadIP;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtReadPort;
+        private System.Windows.Forms.Label lblD;
+        private System.Windows.Forms.Label lblL;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label13;
     }
 }
 
