@@ -28,7 +28,7 @@ namespace SocketApp3
 
             lblL.Top = 56;
             lblL.Height = 1;
-            lblL.Width = lblD.Width-1;
+            lblL.Width = lblD.Width - 1;
             lblL.Left = 11;
             lblL.BackColor = Color.FromName("AppWorkspace");
         }
@@ -115,6 +115,7 @@ namespace SocketApp3
 
         private void lstThermoSensors_DoubleClick(object sender, EventArgs e)
         {
+            if (lstThermoSensors.Items.Count == 0) return;
             EditItem(lstThermoSensors.SelectedIndex, lstThermoSensors.SelectedItem.ToString().Substring(5));
         }
 
@@ -185,6 +186,23 @@ namespace SocketApp3
             {
                 arr[i + offset] = Convert.ToByte(mas[i], 16);
             }
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+
+            FormHelp frm = new FormHelp();
+            DialogResult dr = frm.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+
+            }
+
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            btnHelp_Click(null, null);
         }
     }
 }

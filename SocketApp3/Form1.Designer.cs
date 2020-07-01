@@ -54,10 +54,11 @@
             this.txtReadPort = new System.Windows.Forms.TextBox();
             this.lblD = new System.Windows.Forms.Label();
             this.lblL = new System.Windows.Forms.Label();
-            this.btnWriteData = new System.Windows.Forms.Button();
-            this.btnGetAllData = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnHelp = new System.Windows.Forms.Button();
+            this.btnWriteData = new System.Windows.Forms.Button();
+            this.btnGetAllData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstThermoSensors
@@ -76,9 +77,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(11, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Subnet mask";
+            this.label1.Text = "Маска підмережі";
             // 
             // txtSubnetMask
             // 
@@ -90,7 +91,7 @@
             // chkDefaultFlag
             // 
             this.chkDefaultFlag.AutoSize = true;
-            this.chkDefaultFlag.Location = new System.Drawing.Point(12, 360);
+            this.chkDefaultFlag.Location = new System.Drawing.Point(15, 296);
             this.chkDefaultFlag.Name = "chkDefaultFlag";
             this.chkDefaultFlag.Size = new System.Drawing.Size(136, 17);
             this.chkDefaultFlag.TabIndex = 5;
@@ -102,9 +103,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "IP address";
+            this.label2.Text = "IP-адреса";
             // 
             // txtIpAddress
             // 
@@ -118,9 +119,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(11, 142);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Gateway";
+            this.label3.Text = "Шлюз";
             // 
             // txtGateway
             // 
@@ -132,20 +133,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 181);
+            this.label4.Location = new System.Drawing.Point(11, 197);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.Size = new System.Drawing.Size(100, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "MAC address (HEX)";
+            this.label4.Text = "MAC-адреса (HEX)";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(109, 142);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 13);
+            this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Port";
+            this.label5.Text = "Порт";
             // 
             // label6
             // 
@@ -159,7 +160,7 @@
             // 
             // txtMacAddress
             // 
-            this.txtMacAddress.Location = new System.Drawing.Point(14, 197);
+            this.txtMacAddress.Location = new System.Drawing.Point(14, 213);
             this.txtMacAddress.Name = "txtMacAddress";
             this.txtMacAddress.Size = new System.Drawing.Size(144, 20);
             this.txtMacAddress.TabIndex = 6;
@@ -183,7 +184,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 220);
+            this.label7.Location = new System.Drawing.Point(11, 254);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 13);
             this.label7.TabIndex = 2;
@@ -201,7 +202,7 @@
             // 
             // txtVibroSensorInfo1
             // 
-            this.txtVibroSensorInfo1.Location = new System.Drawing.Point(35, 236);
+            this.txtVibroSensorInfo1.Location = new System.Drawing.Point(34, 270);
             this.txtVibroSensorInfo1.Name = "txtVibroSensorInfo1";
             this.txtVibroSensorInfo1.Size = new System.Drawing.Size(42, 20);
             this.txtVibroSensorInfo1.TabIndex = 9;
@@ -217,7 +218,7 @@
             // 
             // txtVibroSensorInfo2
             // 
-            this.txtVibroSensorInfo2.Location = new System.Drawing.Point(113, 236);
+            this.txtVibroSensorInfo2.Location = new System.Drawing.Point(112, 270);
             this.txtVibroSensorInfo2.Name = "txtVibroSensorInfo2";
             this.txtVibroSensorInfo2.Size = new System.Drawing.Size(42, 20);
             this.txtVibroSensorInfo2.TabIndex = 10;
@@ -236,12 +237,13 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(11, 9);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 13);
+            this.label11.Size = new System.Drawing.Size(56, 13);
             this.label11.TabIndex = 2;
-            this.label11.Text = "IP address";
+            this.label11.Text = "IP-адреса";
             // 
             // txtReadIP
             // 
+            this.txtReadIP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txtReadIP.Location = new System.Drawing.Point(14, 25);
             this.txtReadIP.Name = "txtReadIP";
             this.txtReadIP.Size = new System.Drawing.Size(101, 20);
@@ -253,12 +255,13 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(122, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(26, 13);
+            this.label12.Size = new System.Drawing.Size(32, 13);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Port";
+            this.label12.Text = "Порт";
             // 
             // txtReadPort
             // 
+            this.txtReadPort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txtReadPort.Location = new System.Drawing.Point(125, 25);
             this.txtReadPort.Name = "txtReadPort";
             this.txtReadPort.Size = new System.Drawing.Size(39, 20);
@@ -270,18 +273,46 @@
             this.lblD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lblD.Location = new System.Drawing.Point(12, 48);
             this.lblD.Name = "lblD";
-            this.lblD.Size = new System.Drawing.Size(41, 15);
+            this.lblD.Size = new System.Drawing.Size(55, 15);
             this.lblD.TabIndex = 12;
             this.lblD.Text = "label13";
             // 
             // lblL
             // 
             this.lblL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lblL.Location = new System.Drawing.Point(59, 48);
+            this.lblL.Location = new System.Drawing.Point(76, 48);
             this.lblL.Name = "lblL";
-            this.lblL.Size = new System.Drawing.Size(72, 10);
+            this.lblL.Size = new System.Drawing.Size(56, 16);
             this.lblL.TabIndex = 12;
             this.lblL.Text = "label13";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 273);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(24, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "№1";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(87, 273);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(24, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "№2";
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.Image = global::SocketApp3.res.help_icon;
+            this.btnHelp.Location = new System.Drawing.Point(12, 338);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(40, 40);
+            this.btnHelp.TabIndex = 13;
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // btnWriteData
             // 
@@ -306,29 +337,12 @@
             this.btnGetAllData.UseVisualStyleBackColor = true;
             this.btnGetAllData.Click += new System.EventHandler(this.btnGetAllData_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 239);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "№1";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(88, 239);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(24, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "№2";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(421, 389);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.txtThermosensorsCount);
             this.Controls.Add(this.txtVibrosensorsCount);
             this.Controls.Add(this.label6);
@@ -364,8 +378,9 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Налаштування датчиків";
+            this.Text = "Програма для роботи з контролерами";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,6 +418,7 @@
         private System.Windows.Forms.Label lblL;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
 

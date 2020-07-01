@@ -61,6 +61,12 @@
     <Compile Include="FormEdit1.Designer.cs">
       <DependentUpon>FormEdit1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHexKeyBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEdit1.resx">
       <DependentUpon>FormEdit1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHexKeyBoard.resx">
       <DependentUpon>FormHexKeyBoard.cs</DependentUpon>
@@ -127,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons-Land-Vista-Hardware-Devices-Hardware-Chip.ico" />
+    <None Include="Resources\help-icon.png" />
     <None Include="Resources\WriteEEPROM.png" />
     <None Include="Resources\ReadEEPROM.png" />
     <None Include="Resources\HEX_2.png" />
