@@ -135,7 +135,7 @@ namespace SocketApp3
             SendMas[20] = bb[0];
             SendMas[21] = bb[1];
             StringHexToByteMas(txtMacAddress.Text, ref SendMas, 22);
-            SendMas[28] = (byte)Convert.ToInt32(txtThermosensorsCount.Text, 16);
+            SendMas[28] = byte.Parse(txtThermosensorsCount.Text);
             SendMas[29] = byte.Parse(txtVibrosensorsCount.Text);
             int k = 30;
             int n = 8;
