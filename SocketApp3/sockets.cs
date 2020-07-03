@@ -57,6 +57,25 @@ namespace SocketApp3
 
         }
 
+        public static string GetNewThermoSensor(string ip, int port)
+        {
+            byte[] mas = new byte[8];
+            if (ConnectNow(ip, port))
+            {
+                byte[] data = Encoding.ASCII.GetBytes("n;");
+                socket.Send(data);
+                Thread.Sleep(50);
+                int total = socket.Receive(mas, 8, 0);
+                DisconectNow();
+                string result = "";
+                foreach (byte b in mas)
+                    result += Convert.ToString(b, 16) + ".";
+                result = result.Substring(0, result.Length - 1);
+                return result;
+            }
+            return "";
+        }
+
         public static void SetEEPROM(ref byte[] arr, string ip, int port)
         {
             if (ConnectNow(ip, port))

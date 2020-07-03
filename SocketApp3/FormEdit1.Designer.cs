@@ -32,6 +32,7 @@
             this.lblText = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
+            this.btnGetNewSensorData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt0
@@ -71,11 +72,22 @@
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
+            // btnGetNewSensorData
+            // 
+            this.btnGetNewSensorData.Image = global::SocketApp3.res.ReadEEPROM;
+            this.btnGetNewSensorData.Location = new System.Drawing.Point(318, 4);
+            this.btnGetNewSensorData.Name = "btnGetNewSensorData";
+            this.btnGetNewSensorData.Size = new System.Drawing.Size(104, 40);
+            this.btnGetNewSensorData.TabIndex = 3;
+            this.btnGetNewSensorData.UseVisualStyleBackColor = true;
+            this.btnGetNewSensorData.Click += new System.EventHandler(this.btnGetNewSensorData_Click);
+            // 
             // FormEdit1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 52);
+            this.ClientSize = new System.Drawing.Size(435, 52);
+            this.Controls.Add(this.btnGetNewSensorData);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lblText);
@@ -98,5 +110,6 @@
         private System.Windows.Forms.Label lblText;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnGetNewSensorData;
     }
 }

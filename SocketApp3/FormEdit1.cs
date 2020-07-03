@@ -46,5 +46,10 @@ namespace SocketApp3
         {
 
         }
+
+        private void btnGetNewSensorData_Click(object sender, EventArgs e)
+        {
+            txt0.Text = sockets.GetNewThermoSensor("10.63.81.10", 2000);
+        }
     }
 }
