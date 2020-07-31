@@ -346,8 +346,8 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(193, 95);
             this.label14.TabIndex = 14;
-            this.label14.Text = "\r\nIP      10.63.81.10\r\nMask    255.255.255.0\r\nGateway 10.63.81.1\r\nPort    2000\r\nM" +
-    "AC     DE.AD.BE.EF.01.01";
+            this.label14.Text = "\r\nIP      192.168.167.99\r\nMask    255.255.255.0\r\nGateway 192.168.167.254\r\nPort   " +
+    " 3306\r\nMAC     DE.AD.BE.EF.01.01";
             // 
             // Form1
             // 
